@@ -3,6 +3,7 @@ package com.psl.blockchain.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ public class BlockchainController {
 	@Autowired
 	private BlockchainService blockchainService;
 
+	@CrossOrigin
 	@RequestMapping(method = RequestMethod.GET, produces = { "application/json" }, path = "/subsidies")
 	public List<Subsidy> getAllSubsidies() {
 		return blockchainService.getAllSubsidies();
